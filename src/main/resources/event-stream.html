@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Spring 5 Reactive WebSocket microservice client</title>
+</head>
+<body>
+	<ul class="container">
+	</ul>
+	<script>
+	var source = new EventSource("http://localhost:8080/events");
+ 
+    source.onopen = function() {
+        console.log("ws.onopen", source);
+    }
+ 
+    source.onerror = function(e) {
+        console.log("ws.onerror", source, e);
+        updateContainer("An error occured");
+    }
+ 
+    source.onmessage = function(e) {
+        console.log("ws.onmessage", source, e);
+        updateContainer(e.data);
+    }
+ 
+    function updateContainer(message) {
+        document.querySelector(".container").innerHTML += "<li>" + message + "</li>";
+    }
+</script>
+</body>
+</html>
