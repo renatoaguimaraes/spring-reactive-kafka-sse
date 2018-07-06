@@ -1,22 +1,26 @@
-Download and run Cassandra docker image. 
+## Spring Boot Reactive + Kafka + Server Sent Event.
+
+Starting Cassandra, Zookeeper and Kafka.
 
 ```
-docker run --name some-cassandra -d cassandra
+docker-compose up
 ```
 
-Accessing Cassandra console.
+Accessing Cassandra console to create the keyspace.
 
 ```
  docker exec -it some-cassandra bash
 ```
+
+Execute cqlsh console.
 
 ```
 cqlsh
 
 ```
 
-Creating a Keyspace.
+Create the keyspace 'poc'.
 
 ```
-CREATE KEYSPACE farfetch WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1};
+CREATE KEYSPACE poc WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1};
 ```
