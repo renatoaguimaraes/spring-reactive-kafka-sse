@@ -15,13 +15,13 @@ git clone https://github.com/renatoaguimaraes/spring-reactive-kafka-sse.git spri
 cd ./spring-reactive-kafka-sse 
 ```
 
-Starting Cassandra, Zookeeper and Kafka.
+Starting Cassandra, Zookeeper and Kafka with docker-compose.
 
 ```
 docker-compose up
 ```
 
-Accessing Cassandra console to create the keyspace.
+Accessing the Cassandra console to create the keyspace.
 
 ```
  docker exec -it some-cassandra bash
@@ -38,6 +38,13 @@ Create the keyspace 'poc'.
 ```
 CREATE KEYSPACE poc WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1};
 ```
+
+Star application 
+
+```
+./gradlew build && java -jar build/libs/gs-reactive-rest-service-0.1.0.jar 
+```
+
 
 
 
