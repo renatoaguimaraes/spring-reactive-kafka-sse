@@ -1,4 +1,4 @@
-## Spring Boot Reactive + Kafka + Server Sent Event.
+## Spring Boot Reactive + Kafka + Server Sent Event + Cassandra.
 
 
 The proof of concept is divided in two moments:
