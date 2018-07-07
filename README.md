@@ -6,6 +6,9 @@ The proof of concept is divided in two moments:
 1. the user connects to the service of SSE (Server Sent Event) via Javascript (EventSource) to listen the events (from kafka).
 2. the user interacts with the service sending HTTP requests and generating events (to kafka).
 
+![Flow](flow.png)
+
+
 ```
 user --- access  ---> event-stream.html (EventSource) ------ listen  ---> http://localhost:8080/events (Server Sent Event) --- subscribe ---> kafka
 
