@@ -7,7 +7,7 @@ The proof of concept is divided in two moments:
 2. the user interacts with the service sending HTTP requests and generating events (to kafka).
 
 ```
-user --- access  ---> event-stream.html (EventSource) ------ listen  ---> http://localhost:8080/events (Server Sent Event) --- listen ---> kafka
+user --- access  ---> event-stream.html (EventSource) ------ listen  ---> http://localhost:8080/events (Server Sent Event) --- subscribe ---> kafka
 
 user --- request ---> http://localhost:8080/api/customer --- publish ---> kafka
 ```
