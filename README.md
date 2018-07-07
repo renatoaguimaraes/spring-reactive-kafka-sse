@@ -17,7 +17,6 @@ Setup.
 ```
 git clone https://github.com/renatoaguimaraes/spring-reactive-kafka-sse.git spring-reactive-kafka-sse
 cd ./spring-reactive-kafka-sse 
-
 ```
 
 Starting Cassandra, Zookeeper and Kafka.
