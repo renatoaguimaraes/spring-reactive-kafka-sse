@@ -1,10 +1,10 @@
-## Spring Boot Reactive + Kafka + Server Sent Event + Cassandra.
+## Stream wih Spring Boot Reactive + Kafka + Server Sent Event + Cassandra.
 
 
-The proof of concept is divided in two moments:
+HTTP stream using Server Sent Event and Kafka, implemented with Spring Boot Reactive and Reactor Kafka. As a plus the data was storage in Cassandra using Spring Data. 
 
 1. the user connects to the service of SSE (Server Sent Event) via Javascript (EventSource) to listen the events (from kafka).
-2. the user interacts with the service sending HTTP requests and generating events (to kafka).
+2. the user interacts with the service sending HTTP requests and generating events (to kafka) and stored in Cassanda.
 
 ![Flow](flow.png)
 
