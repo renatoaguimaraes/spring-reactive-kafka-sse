@@ -8,14 +8,7 @@ The proof of concept is divided in two moments:
 
 ![Flow](flow.png)
 
-
-```
-user --- access  ---> event-stream.html (EventSource) ------ listen  ---> http://localhost:8080/events (Server Sent Event) --- subscribe ---> kafka
-
-user --- request ---> http://localhost:8080/api/customer --- publish ---> kafka
-```
-
-Setup.
+Quick start. 
 
 ```
 git clone https://github.com/renatoaguimaraes/spring-reactive-kafka-sse.git spring-reactive-kafka-sse
@@ -34,7 +27,7 @@ Accessing Cassandra console to create the keyspace.
  docker exec -it some-cassandra bash
 ```
 
-Execute cqlsh console.
+Execute cqlsh console inside the container.
 
 ```
 cqlsh
