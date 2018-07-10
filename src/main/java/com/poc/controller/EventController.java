@@ -11,18 +11,18 @@ import com.poc.broker.EventConsumer;
 import reactor.core.publisher.Flux;
 
 @RestController
-public class EventsController
+public class EventController
 {
     private EventConsumer eventConsumer;
 
-    public EventsController(EventConsumer eventConsumer)
+    public EventController(EventConsumer eventConsumer)
     {
         this.eventConsumer = eventConsumer;
     }
 
     @CrossOrigin(origins = "*")
     @GetMapping(name = "/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<ServerSentEvent<String>> getInfiniteMessages()
+    public Flux<ServerSentEvent<String>> getEvents()
     {
         return eventConsumer.get();
     }
