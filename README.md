@@ -6,8 +6,6 @@ HTTP stream using Server Sent Event and Kafka, implemented with Spring Boot Reac
 1. the user connects to the service of SSE (Server Sent Event) via Javascript (EventSource) to listen the events (from kafka).
 2. the user interacts with the service sending HTTP requests and generating events (to kafka) and stored in Cassanda.
 
-Setup.
-=======
 ![Flow](flow.png)
 
 Quick start. 

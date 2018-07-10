@@ -1,7 +1,5 @@
 package com.poc.broker;
 
-import java.util.UUID;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -30,7 +28,7 @@ public class EventProducer
         {
             String json = mapper.writeValueAsString(customer);
 
-            kafkaTemplate.send("test", UUID.randomUUID().toString(), json);
+            kafkaTemplate.send("test", json);
         }
         catch (JsonProcessingException e)
         {

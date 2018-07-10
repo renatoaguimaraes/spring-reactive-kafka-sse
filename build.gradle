@@ -30,15 +30,12 @@ repositories {
     maven { url "https://repo.spring.io/milestone" }
 }
 
-
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-webflux')
-   	compile('org.springframework.boot:spring-boot-starter-data-cassandra-reactive')
-   	compile('org.springframework.boot:spring-boot-starter-integration')
-	compile('org.apache.commons:commons-lang3')
-	compile "io.projectreactor.kafka:reactor-kafka:1.0.0.RELEASE"
-	compile('org.springframework.kafka:spring-kafka:2.1.7.RELEASE')
+	compile('org.springframework.boot:spring-boot-starter-webflux')
+    compile('org.springframework.boot:spring-boot-starter-data-cassandra-reactive')
+    compile('org.springframework.boot:spring-boot-starter-integration')
+    compile('org.apache.commons:commons-lang3')
+    compile('org.springframework.kafka:spring-kafka:2.1.7.RELEASE')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('io.projectreactor:reactor-test')
-    
 }
