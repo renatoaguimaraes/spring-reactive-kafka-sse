@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Spring 5 Reactive WebSocket microservice client</title>
+<title>Server Sent Event</title>
 </head>
 <body>
 	<ul class="container">
@@ -11,16 +11,16 @@
 	var source = new EventSource("http://localhost:8080/events");
  
     source.onopen = function() {
-        console.log("ws.onopen", source);
+        console.log("sse.onopen", source);
     }
  
     source.onerror = function(e) {
-        console.log("ws.onerror", source, e);
+        console.log("sse.onerror", source, e);
         updateContainer("An error occured");
     }
  
     source.onmessage = function(e) {
-        console.log("ws.onmessage", source, e);
+        console.log("sse.onmessage", source, e);
         updateContainer(e.data);
     }
  
