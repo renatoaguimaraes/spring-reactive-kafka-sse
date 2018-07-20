@@ -1,69 +1,72 @@
 package com.poc.model;
 
-import java.util.UUID;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.springframework.data.cassandra.core.mapping.Column;
-import org.springframework.data.cassandra.core.mapping.PrimaryKey;
-import org.springframework.data.cassandra.core.mapping.Table;
 
-@Table("customer")
-public class Customer {
+public class Customer
+{
 
-	@PrimaryKey
-	private UUID id;
-	@Column("firstname")
-	private String firstName;
-	@Column("lastname")
-	private String lastName;
-	
-	private int age;
+    private String id;
+    private String firstName;
+    private String lastName;
 
-	public Customer() {
-	}
+    private int age;
 
-	public Customer(UUID id, String firstName, String lastName, int age) {
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
-	}
+    public Customer()
+    {
+    }
 
-	public void setId(UUID id) {
-		this.id = id;
-	}
+    public Customer(String id, String firstName, String lastName, int age)
+    {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
 
-	public UUID getId() {
-		return this.id;
-	}
+    public void setId(String id)
+    {
+        this.id = id;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public String getId()
+    {
+        return this.id;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public String getFirstName()
+    {
+        return firstName;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public String getLastName()
+    {
+        return lastName;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
 
-	public int getAge() {
-		return this.age;
-	}
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
 
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-	}
+    public int getAge()
+    {
+        return this.age;
+    }
+
+    @Override
+    public String toString()
+    {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+    }
 }

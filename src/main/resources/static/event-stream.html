@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Server Sent Event</title>
+</head>
+<body>
+	<h1>Messages</h1>
+	<ul class="container">
+	</ul>
+	<script>
+	var source = new EventSource("http://localhost:8080/events");
+ 
+    source.onopen = function() {
+        console.log("sse.onopen", source);
+        updateContainer("Server start communication");
+    }
+ 
+    source.onerror = function(e) {
+        console.log("sse.onerror", source, e);
+        updateContainer("An error occured");
+    }
+ 
+    source.onmessage = function(e) {
+        console.log("sse.onmessage", source, e);
+        updateContainer(e.data);
+    }
+ 
+/*     
+	source.addEventListener("message", function(e) {
+    	updateContainer(e.data);
+    });
+ */ 
+ 
+    function updateContainer(message) {
+        document.querySelector(".container").innerHTML += "<li>" + message + "</li>";
+    }
+</script>
+</body>
+</html>

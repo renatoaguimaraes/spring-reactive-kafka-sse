@@ -12,6 +12,10 @@ buildscript {
     }
 }
 
+plugins {
+  id 'com.google.cloud.tools.jib' version '0.9.4'
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -32,7 +36,6 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-webflux')
-    compile('org.springframework.boot:spring-boot-starter-data-cassandra-reactive')
     compile('org.springframework.boot:spring-boot-starter-integration')
     compile('org.apache.commons:commons-lang3')
     compile('org.springframework.kafka:spring-kafka:2.1.7.RELEASE')

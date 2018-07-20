@@ -5,6 +5,7 @@
 <title>Server Sent Event</title>
 </head>
 <body>
+	<h1>Messages</h1>
 	<ul class="container">
 	</ul>
 	<script>
@@ -12,6 +13,7 @@
  
     source.onopen = function() {
         console.log("sse.onopen", source);
+        updateContainer("Server start communication");
     }
  
     source.onerror = function(e) {
@@ -24,6 +26,10 @@
         updateContainer(e.data);
     }
  
+    source.addEventListener("message", function(e) {
+    	updateContainer(e.data);
+    });
+    
     function updateContainer(message) {
         document.querySelector(".container").innerHTML += "<li>" + message + "</li>";
     }

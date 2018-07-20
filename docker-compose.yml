@@ -24,13 +24,6 @@ services:
       - kafkaserver
     environment:
       ZK_HOSTS: "kafkaserver:2181"
-  cassandra:
-    image: "cassandra"
-    container_name: some-cassandra
-    networks:
-      - kafkanet
-    ports:
-      - 9042:9042
 
 networks:
   kafkanet:
